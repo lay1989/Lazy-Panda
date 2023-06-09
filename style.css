@@ -1,0 +1,330 @@
+/* Add the following CSS to style.css file */
+
+/* Main Color (Coral or vibrant pink) - #FF6F61 */
+@import url('https://fonts.googleapis.com/css?family=Parisienne');
+
+/* Accent Colors (Teal or turquoise) - #00CED1 */
+@import url('https://fonts.googleapis.com/css?family=Marck+Script');
+
+/* Complementary Colors (Bright yellow or sunny orange) - #FFD700 or #FFA500 */
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes');
+
+/* Supporting Colors (Light gray or white) - #F5F5F5 or #FFFFFF */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/* Apply the fonts to the desired elements */
+body {
+  font-family: 'Roboto';
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: cursive;
+
+}
+
+
+p {
+  font-family: 'Roboto';
+}
+
+.button {
+  font-family: 'Great Vibes', cursive;
+}
+
+/* Define the color palette */
+:root {
+  --main-color: #FF6F61;
+  --accent-color: #FFEFD5;
+  --complementary-color: #FFD700;
+  --supporting-color: #F5F5F5;
+  --bg-color: #FFDAB9;
+}
+
+/* Navbar */
+.navbar,
+#footer  {
+  background-color: var(--main-color);
+}
+
+.navbar .nav-item .nav-link {
+  color: var(--supporting-color);
+}
+
+.navbar .nav-item .nav-link.active {
+  color: var(--main-color);
+}
+
+/* Modal */
+.modal-header {
+  background-color: var(--main-color);
+}
+
+/* Sections */
+#home,
+#scavenger-hunt,
+#balance-sheet,
+#contact {
+  background-color: var(--bg-color);
+}
+
+#gallery .carousel-control-prev,
+#gallery .carousel-control-next {
+  background-color: var(--main-color);
+}
+
+#quotes .carousel-control-prev,
+#quotes .carousel-control-next {
+  background-color: var(--main-color);
+}
+
+/* Balance Sheet */
+#balance-sheet .list-group-item:nth-child(even) {
+  background-color: var(--accent-color);
+}
+
+/* Contact */
+#contact .business-card-front {
+  background-color: var(--main-color);
+}
+
+#contact .business-card-back {
+  background-color: var(--main-color);
+}
+
+/* Optional: Override Bootstrap classes for button and input styles */
+.btn-primary {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+}
+
+.btn-primary:hover {
+  background-color: #FF5733;
+  border-color: #FF5733;
+}
+
+.form-control {
+  background-color: var(--supporting-color);
+  border-color: var(--supporting-color);
+}
+
+.form-control:focus {
+  background-color: #E0E0E0;
+  border-color: #E0E0E0;
+}
+
+.happy {
+  font-family: Tahoma, sans-serif;
+  text-align: center;
+  margin: 30px;
+  transition: 0.1s;
+}
+
+.birthdayCard {
+  position: relative;
+  width: 250px;
+  height: 350px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform: perspective(2500px);
+  transition: 1s;
+}
+
+.cardFront {
+  position: relative;
+  width: 250px;
+  height: 350px;
+  overflow: hidden;
+  transform-origin: left;
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2),
+    30px 0 50px rgba(0, 0, 0, 0.4);
+  transition: 0.6s;
+}
+
+.balloons {
+  position: absolute;
+}
+
+.picture {
+  position: absolute;
+  visibility: hidden;
+}
+
+.balloonOne,
+.balloonTwo,
+.balloonThree,
+.balloonFour {
+  position: absolute;
+  width: 85px;
+  height: 95px;
+  border-radius: 50%;
+}
+
+.balloonOne {
+  left: -10px;
+  top: 50px;
+}
+
+.balloonTwo {
+  left: 50px;
+  top: 20px;
+}
+
+.balloonThree {
+  left: 110px;
+  top: 50px;
+}
+
+.balloonFour {
+  left: 170px;
+  top: 20px;
+}
+
+.balloonOne:before,
+.balloonTwo:before,
+.balloonThree:before,
+.balloonFour:before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 155px;
+  background-color: #ffd166;
+  top: 95px;
+  left: 43px;
+}
+
+.balloonOne:after,
+.balloonTwo:after,
+.balloonThree:after,
+.balloonFour:after {
+  content: "";
+  position: absolute;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+  top: 94px;
+  left: 37px;
+}
+
+.balloonOne:after {
+  border-bottom: 10px solid #ef476f;
+}
+
+.balloonTwo:after {
+  border-bottom: 10px solid #06d6a0;
+}
+
+.balloonThree:after {
+  border-bottom: 10px solid #ffd166;
+}
+
+.balloonFour:after {
+  border-bottom: 10px solid #118ab2;
+}
+
+.cardInside {
+  position: absolute;
+  border: 2px solid yellowgreen;
+  width: 250px;
+  height: 350px;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+}
+
+p {
+  font-family: cursive;
+  margin: 12px;
+  color: #333;
+}
+
+.back {
+  font-family: Tahoma, sans-serif;
+  color: #333;
+  text-align: center;
+  margin: 30px;
+  outline-color: #333;
+  outline-style: dotted;
+}
+
+.birthdayCard:hover {
+  transform: perspective(2500px) rotate(5deg);
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2),
+    0 10px 100px rgba(0, 0, 0, 0.5);
+}
+
+.birthdayCard:hover .cardFront {
+  transform: rotateY(-160deg);
+}
+
+.birthdayCard:hover .happy {
+  visibility: hidden;
+}
+
+.birthdayCard:hover .balloons {
+  visibility: hidden;
+}
+
+.birthdayCard:hover .picture {
+  visibility: visible;
+}
+
+
+
+/* business card css */
+
+.business-card {
+  perspective: 1000px;
+  width: 400px;
+  height: 250px;
+  margin: 100px auto;
+  border-radius: 10px;
+  background-color: var(--bg-color);
+}
+
+.business-card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.business-card:hover .business-card-inner {
+  transform: rotateY(180deg);
+}
+
+.business-card-front,
+.business-card-back {
+  position: absolute;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  text-align: center;
+}
+
+.business-card-front,
+.business-card-back {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.business-card-back {
+  transform: rotateY(180deg);
+}
+
+#carouselExampleIndicators .carousel-item {
+  height: 650px;
+}
+
+.carousel-item img {
+    position: absolute;
+    object-fit: scale-down;
+    top: 0;
+    left: 0;
+    min-height: 650px;
+}
