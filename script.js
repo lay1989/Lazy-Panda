@@ -156,6 +156,8 @@ const quoteCarousel = new bootstrap.Carousel(document.getElementById('quote-caro
   interval: 5000 // Change slide every 3 seconds
 });
 
+$(document).ready(function(){
+  /*CODE HERE*/
 // Generate a random quote
     async function generateRandomQuote() {
       try {
@@ -187,3 +189,4 @@ const quoteCarousel = new bootstrap.Carousel(document.getElementById('quote-caro
 
     // Update the quote and QR code periodically (every 60 seconds in this example)
     setInterval(updateQuoteAndQRCode, 60000);
+  });
