@@ -169,7 +169,7 @@ const quoteCarousel = new bootstrap.Carousel(document.getElementById('quote-caro
     }
 
     // Create a QR code with the initial quote
-    var qrcode = new QRCode("qrcode", {
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
       text: '',
       width: 180,
       height: 180
