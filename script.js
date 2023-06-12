@@ -156,37 +156,34 @@ const quoteCarousel = new bootstrap.Carousel(document.getElementById('quote-caro
   interval: 5000 // Change slide every 3 seconds
 });
 
-$(document).ready(function(){
-  /*CODE HERE*/
 // Generate a random quote
-    async function generateRandomQuote() {
-      try {
-        const response = await fetch('https://api.quotable.io/random');
-        const data = await response.json();
-        return data.content;
-      } catch (error) {
-        console.log('Error:', error);
-        return 'Failed to fetch quote';
-      }
-    }
+async function generateRandomQuote() {
+  try {
+    const response = await fetch('https://api.quotable.io/random');
+    const data = await response.json();
+    return data.content;
+  } catch (error) {
+    console.log('Error:', error);
+    return 'Failed to fetch quote';
+  }
+}
 
-    // Create a QR code with the initial quote
-    var qrcode = new QRCode(document.getElementById("qrcode"), {
-      text: '',
-      width: 180,
-      height: 180
-    });
+// Create a QR code with the initial quote
+var qrcode = new QRCode("qrcode", {
+  text: '',
+  width: 128,
+  height: 128
+});
 
-    // Function to update the quote and QR code with a new quote
-    async function updateQuoteAndQRCode() {
-      var newQuote = await generateRandomQuote();
-      qrcode.clear();
-      qrcode.makeCode(newQuote);
-    }
+// Function to update the quote and QR code with a new quote
+async function updateQuoteAndQRCode() {
+  var newQuote = await generateRandomQuote();
+  qrcode.clear();
+  qrcode.makeCode(newQuote);
+}
 
-    // Display the first quote when the website loads
-    updateQuoteAndQRCode();
+// Display the first quote when the website loads
+updateQuoteAndQRCode();
 
-    // Update the quote and QR code periodically (every 60 seconds in this example)
-    setInterval(updateQuoteAndQRCode, 60000);
-  });
+// Update the quote and QR code periodically (every 60 seconds in this example)
+setInterval(updateQuoteAndQRCode, 60000);
